@@ -23,7 +23,7 @@ public class AndroidLauncher extends AndroidApplication {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode== KeyEvent.KEYCODE_BACK){
-			Log.i(TAG, "バックキーが押された");
+			Log.i(TAG, "BackKey Pressed");
 			DialogFragment dlgFlagment = new DlgFragment();
 			dlgFlagment.show(getFragmentManager(), TAG);
 			return true;

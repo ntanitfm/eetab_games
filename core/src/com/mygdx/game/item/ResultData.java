@@ -1,5 +1,8 @@
 package com.mygdx.game.item;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * 結果データの格納
  * Created by ntani on 2017/11/02.
@@ -9,6 +12,7 @@ public class ResultData {
     public String mode;
     public long time;
     public String name;
+    public String date;
 
     // Firebase用の空のコンストラクタ
     public ResultData() {}
@@ -17,6 +21,10 @@ public class ResultData {
         this.mode = mode;
         this.name = name;
         this.time = time;
+        // 日付の取得
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        this.date = sdf.format(cal.getTime());
     }
 
     // Firebase用のGetter, Setter
@@ -44,9 +52,17 @@ public class ResultData {
         this.name = name;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        return "mode = " + mode + ", time = " + time + ", name = " + name;
+        return "mode = " + mode + ", time = " + time + ", name = " + name + ", data =  " + date;
     }
 
     public String generateSec() {
