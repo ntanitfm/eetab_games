@@ -16,6 +16,7 @@ public class ResultScreen extends ScreenAdapter {
     private String TAG = ResultScreen.class.getSimpleName();
     Stage stage;
     Label finishedTime;
+    Label resultTitle;
     TextButton goTitle;
     TextButton goRanking;
     ResultEnvironment env;
@@ -24,6 +25,7 @@ public class ResultScreen extends ScreenAdapter {
         Gdx.app.log(TAG, "constructor in Result");
         env = new ResultEnvironment(game, gameMode, elapsedTime);
         finishedTime = env.getTimeLabel();
+        resultTitle = env.getRssultTitleLabel();
         goTitle = env.getTitleButton();
         goRanking = env.getRankingButton();
     }
@@ -34,6 +36,7 @@ public class ResultScreen extends ScreenAdapter {
         //  ステージ生成
         stage = new Stage(Config.viewport);
         stage.addActor(finishedTime);
+        stage.addActor(resultTitle);
         stage.addActor(goTitle);
         stage.addActor(goRanking);
         Gdx.input.setInputProcessor(stage);

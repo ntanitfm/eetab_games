@@ -6,11 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.item.Config;
 import com.mygdx.game.item.ResultData;
 import com.mygdx.game.main.Shisen;
 import com.mygdx.game.ranking.RankingScreen;
 import com.mygdx.game.title.TitleScreen;
+
+import javax.swing.GroupLayout;
 
 
 /**
@@ -48,13 +51,29 @@ class ResultEnvironment {
         }, "名前の入力。", "", "省略可能");
     }
 
+    // 結果を表示
+    Label getRssultTitleLabel(){
+        float width = 1280f;
+        float height = 100f;
+        Label label = new Label(mode + "MODEの結果", Config.skin);
+        label.setFontScale(4);
+        label.setSize(width, height);
+        label.setAlignment(Align.center);
+        label.debug();
+        label.setColor(0,0,0,1);
+        label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 10);
+        return label;
+    }
+
     // screenからもらってきたtimeを自動で取得
     Label getTimeLabel(){
-        float width = 400f;
-        float height = 100f;
+        float width = 1280f;
+        float height = 200f;
         Label label = new Label(generateSec(time), Config.skin);
         label.setFontScale(5);
         label.setSize(width, height);
+        label.setAlignment(Align.center);
+        label.debug();
         label.setColor(0,0,0,1);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT_CTR - height / 2);
         return label;
