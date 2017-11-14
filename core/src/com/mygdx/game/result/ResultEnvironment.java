@@ -13,9 +13,6 @@ import com.mygdx.game.main.Shisen;
 import com.mygdx.game.ranking.RankingScreen;
 import com.mygdx.game.title.TitleScreen;
 
-import javax.swing.GroupLayout;
-
-
 /**
  * Created by ntani on 2017/11/01.
  */

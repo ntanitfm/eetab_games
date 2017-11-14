@@ -45,25 +45,34 @@ class RankingEnvironment {
         table.setFillParent(true);
         Label rankingMode = getModeLabel(viewMode);
         table.add(rankingMode).colspan(3).fillX();
+        table.row().padTop(20).padBottom(20);
+        // 案内用ラベル宣言
+        List<Label> labels = new ArrayList<Label>();
+        labels.add(new Label("順位", Config.skin));
+        labels.add(new Label("名前", Config.skin));
+        labels.add(new Label("タイム", Config.skin));
+        tableSetter(labels, table, 1.5f);
         int number = 1;
         for(ResultData rd : showList) {
             Gdx.app.log(TAG, rd.toString());
             table.row();
-            Label num  = new Label("" + (number++),Config.skin);
-            Label name = new Label(rd.name, Config.skin);
-            Label time = new Label(rd.generateSec(), Config.skin);
-            num.setColor(0,0,0,1);
-            name.setColor(0,0,0,1);
-            time.setColor(0,0,0,1);
-            num.setFontScale(3);
-            name.setFontScale(3);
-            time.setFontScale(3);
-            table.add(num).expand();
-            table.add(name).expand();
-            table.add(time).expand();
+            labels.add(new Label("" + (number++), Config.skin));
+            labels.add(new Label(rd.name, Config.skin));
+            labels.add(new Label(rd.generateSec(), Config.skin));
+            tableSetter(labels, table, 3f);
             if(number > 10) break;
         }
         return table;
+    }
+
+    // テーブルにラベルを追加
+    private void tableSetter(List<Label> labelList, Table table, float fontScale) {
+        for(Label label : labelList) {
+            label.setColor(0,0,0,1);
+            label.setFontScale(fontScale);
+            table.add(label).expand();
+        }
+        labelList.clear();
     }
 
     // キーによるリストの絞り込み
