@@ -44,13 +44,14 @@ class RankingEnvironment {
         table.padRight(100f);
         table.setFillParent(true);
         Label rankingMode = getModeLabel(viewMode);
-        table.add(rankingMode).colspan(3).fillX();
+        table.add(rankingMode).colspan(4).fillX();
         table.row().padTop(20).padBottom(20);
         // 案内用ラベル宣言
         List<Label> labels = new ArrayList<Label>();
         labels.add(new Label("順位", Config.skin));
         labels.add(new Label("名前", Config.skin));
         labels.add(new Label("タイム", Config.skin));
+        labels.add(new Label("日付", Config.skin));
         tableSetter(labels, table, 1.5f);
         int number = 1;
         for(ResultData rd : showList) {
@@ -59,7 +60,8 @@ class RankingEnvironment {
             labels.add(new Label("" + (number++), Config.skin));
             labels.add(new Label(rd.name, Config.skin));
             labels.add(new Label(rd.generateSec(), Config.skin));
-            tableSetter(labels, table, 3f);
+            labels.add(new Label(rd.date, Config.skin));
+            tableSetter(labels, table, 2.2f);
             if(number > 10) break;
         }
         return table;

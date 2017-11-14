@@ -36,7 +36,7 @@ class ResultEnvironment {
                 Gdx.app.log(TAG, "input");
                 // 結果データ登録
                 rd = new ResultData(mode, time, text);
-//                game.dbo.push(rd);
+                game.dbo.push(rd);
                 Gdx.app.log(TAG, "登録データ: " + rd);
             }
 
