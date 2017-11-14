@@ -6,7 +6,9 @@ import com.mygdx.game.title.TitleScreen;
 public class Shisen extends Game {
 	public DatabaseOperator dbo;
 
-	public Shisen(DatabaseOperator dbo) {this.dbo = dbo;}
+	public Shisen(DatabaseOperator dbo) {
+		this.dbo = dbo;
+	}
 
 	@Override
 	public void create () {

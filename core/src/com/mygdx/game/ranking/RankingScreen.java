@@ -50,6 +50,7 @@ public class RankingScreen extends ScreenAdapter {
         draw();
     }
 
+    // @TODO このupdateを無くしたい.
     void update() {
         // 画面に変更があれば、画面を更新
         if(env.isRankingChangeed()) {
