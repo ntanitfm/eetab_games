@@ -25,7 +25,7 @@ public class ResultScreen extends ScreenAdapter {
         Gdx.app.log(TAG, "constructor in Result");
         env = new ResultEnvironment(game, gameMode, elapsedTime);
         finishedTime = env.getTimeLabel();
-        resultTitle = env.getRssultTitleLabel();
+        resultTitle = env.getModeLabel();
         goTitle = env.getTitleButton();
         goRanking = env.getRankingButton();
     }

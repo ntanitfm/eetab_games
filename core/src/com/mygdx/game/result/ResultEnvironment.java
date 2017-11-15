@@ -48,17 +48,17 @@ class ResultEnvironment {
         }, "名前の入力。", "", "省略可能");
     }
 
-    // 結果を表示
-    Label getRssultTitleLabel(){
+    // 難易度を表示
+    Label getModeLabel(){
         float width = 1280f;
-        float height = 100f;
-        Label label = new Label(mode + "MODEの結果", Config.skin);
-        label.setFontScale(4);
+        float height = 100;
+        Label label = new Label("難易度[" + mode + "]", Config.skin);
+        label.setFontScale(3);
         label.setSize(width, height);
         label.setAlignment(Align.center);
 //        label.debug();
         label.setColor(0,0,0,1);
-        label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 10);
+        label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 20);
         return label;
     }
 
@@ -66,7 +66,7 @@ class ResultEnvironment {
     Label getTimeLabel(){
         float width = 1280f;
         float height = 200f;
-        Label label = new Label(generateSec(time), Config.skin);
+        Label label = new Label("達成時間\n" + generateSec(time), Config.skin);
         label.setFontScale(5);
         label.setSize(width, height);
         label.setAlignment(Align.center);

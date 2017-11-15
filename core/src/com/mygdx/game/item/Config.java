@@ -34,11 +34,11 @@ public class Config {
     final static public float TTL_TXTBTN_HEIGHT_CTR = TXTBTN_HEIGHT / 2;
     // 状態名
     final static public String NO_SLCT              = "NO_SELECTED";
-    final static public String TITL                 = "TITLE";
-    final static public String PLAY_LV1             = "EASY";
-    final static public String PLAY_LV2             = "FULL";
-    final static public String RSLT                 = "RESULT";
-    final static public String RANK                 = "RANKING";
+    final static public String TITL                 = "タイトル";
+    final static public String PLAY_LV1             = "Normal";
+    final static public String PLAY_LV2             = "Hard";
+    final static public String RSLT                 = "結果";
+    final static public String RANK                 = "ランキング";
     final static public String LICE                 = "LICENCE";
     // シーン
     final static public SpriteBatch batcher         = new SpriteBatch();
