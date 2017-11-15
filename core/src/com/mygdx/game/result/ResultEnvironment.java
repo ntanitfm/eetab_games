@@ -56,7 +56,7 @@ class ResultEnvironment {
         label.setFontScale(4);
         label.setSize(width, height);
         label.setAlignment(Align.center);
-        label.debug();
+//        label.debug();
         label.setColor(0,0,0,1);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 10);
         return label;
@@ -70,7 +70,7 @@ class ResultEnvironment {
         label.setFontScale(5);
         label.setSize(width, height);
         label.setAlignment(Align.center);
-        label.debug();
+//        label.debug();
         label.setColor(0,0,0,1);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT_CTR - height / 2);
         return label;

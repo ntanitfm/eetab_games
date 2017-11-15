@@ -29,7 +29,7 @@ class PlayConf {
         ROWS = 6;
         COLS = 9;
         PAI_HEIGHT = Config.SCRN_HEIGHT / ROWS;
-        PAI_WIDTH = Config.SCRN_WIDTH / (COLS * 1.2f);
+        PAI_WIDTH = (Config.SCRN_WIDTH * 0.8f) / COLS;
         paiTypeList = new ArrayList<String>(Arrays.asList(
             "0","1","2","9","10","11","18","19","20","27","28","29","30",
             "0","1","2","9","10","11","18","19","20","27","28","29","30",
@@ -42,8 +42,8 @@ class PlayConf {
     private void lv2EnvConf() {
         ROWS = 8;
         COLS = 17;
-        PAI_HEIGHT = Config.SCRN_HEIGHT / (ROWS * 1.15f);
-        PAI_WIDTH = Config.SCRN_WIDTH / (COLS * 1.1f);
+        PAI_HEIGHT = (Config.SCRN_HEIGHT * 0.87f) / ROWS;
+        PAI_WIDTH = (Config.SCRN_WIDTH * 0.87f) / COLS;
         paiTypeList = new ArrayList<String>();
         for (int i = 0; i <= 33; i++) {
             for (int j = 0; j < 4; j++) {

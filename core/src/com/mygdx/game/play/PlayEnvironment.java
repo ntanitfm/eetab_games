@@ -42,11 +42,6 @@ class PlayEnvironment {
         this.mode = mode;
         // 難易度ごとに牌を配置
         plycnf = new PlayConf(mode);
-        commonEnvConf();
-    }
-
-    // 共通設定
-    private void commonEnvConf() {
         // 開始時刻記録
         startTime = System.currentTimeMillis();
         // 条件判定用クラス
@@ -54,6 +49,7 @@ class PlayEnvironment {
         // テーブル設置
         table = new Table(Config.skin);
         table.setFillParent(true);
+//        table.debugAll();
         // 牌一覧・状態を格納するリスト
         paiList = new ArrayList<Pai>();
         // 牌制御用
