@@ -58,6 +58,7 @@ project(":android") {
 
     dependencies {
         compile 'com.google.firebase:firebase-database:11.0.4'
+        compile 'com.google.firebase:firebase-auth:11.0.4'
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"

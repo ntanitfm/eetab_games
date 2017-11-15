@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +21,9 @@ import java.util.List;
  *
  * 抽象化されたDbo(DataBaseOperator)の
  * Androidにおける処理の定義が行われたクラス
+ *
+ * tf.thcp@gmail.comアカウントのGAMEsプロジェクトに接続されている
+ *
  * Created by ntani on 2017/11/07.
  */
 
@@ -28,6 +32,7 @@ public class FirebaseOperator implements DatabaseOperator {
     private List<ResultData> resultList;
     private DatabaseReference dbRef;
     private ValueEventListener vel;
+    private FirebaseAuth mAuth;
 
     public FirebaseOperator() {
         Log.i(TAG, "constructor");
