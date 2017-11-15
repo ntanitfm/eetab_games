@@ -126,7 +126,7 @@ class PlayEnvironment {
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
-        txtBtn.setSize(100f, 50f);
+        txtBtn.setSize(Config.TXTBTN_WIDTH_S, Config.TXTBTN_HEIGHT);
         txtBtn.setPosition(0f, 0f);
         setBtnListener(txtBtn);
         return txtBtn;
@@ -134,8 +134,8 @@ class PlayEnvironment {
     // result画面へ強制以降(デバッグ用)
     TextButton getResultButton() {
         TextButton txtBtn = new TextButton(Config.RSLT, Config.skin);
-        txtBtn.setSize(100f, 50f);
-        txtBtn.setPosition(Config.SCRN_WIDTH - 100f, 0f);
+        txtBtn.setSize(Config.TXTBTN_WIDTH_S, Config.TXTBTN_HEIGHT);
+        txtBtn.setPosition(Config.SCRN_WIDTH - Config.TXTBTN_WIDTH_S, 0f);
         setBtnListener(txtBtn);
         return txtBtn;
     }

@@ -20,6 +20,7 @@ public class TitleScreen extends ScreenAdapter {
     String TAG = TitleScreen.class.getSimpleName();
     TitleEnvironment env;
     Stage stage;
+    Image shisenImg;
     Image titlePai;
     TextButton easyButton;
     TextButton normalButton;
@@ -30,6 +31,8 @@ public class TitleScreen extends ScreenAdapter {
     public TitleScreen(Shisen game) {
         Gdx.app.log(TAG, "Constructor in Title");
         env = new TitleEnvironment(game);
+        // タイトル
+        shisenImg = env.getTitleImg();
         // 中央回転牌
         titlePai = env.getTitlePai();
         // テキストボタン
@@ -48,6 +51,7 @@ public class TitleScreen extends ScreenAdapter {
         stage = new Stage(Config.viewport);
         Gdx.input.setInputProcessor(stage);
         // ウィジェット追加
+        stage.addActor(shisenImg);
         stage.addActor(titlePai);
         stage.addActor(easyButton);
         stage.addActor(normalButton);

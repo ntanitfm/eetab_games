@@ -104,7 +104,7 @@ class RankingEnvironment {
     Label getModeLabel(String mode){
         float width = 500f;
         float height = 100f;
-        Label label = new Label(mode + " mode Ranking", Config.skin);
+        Label label = new Label(mode + "モードランキング", Config.skin);
         label.setFontScale(2);
         label.setSize(width, height);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height);

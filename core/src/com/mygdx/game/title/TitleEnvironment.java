@@ -37,6 +37,14 @@ class TitleEnvironment {
         this.game = game;
     }
 
+    // タイトルイメージ読み込み
+    Image getTitleImg() {
+        Image ttlImg = new Image(new Texture("image/shisen.PNG"));
+        ttlImg.setSize(Config.TTLIMG_WIDTH, Config.TTLIMG_HEIGHT);
+        ttlImg.setPosition(SCRN_WIDTH_CTR - TTLIMG_WIDTH_CTR, SCRN_HEIGHT - TTLIMG_HEIGHT - 30);
+        return ttlImg;
+    }
+
     // タイトル回転牌
     Image getTitlePai() {
         Image ttlPai = new Image(new Texture("icon/normal/p1.png"));
