@@ -25,7 +25,7 @@ public class Config {
     final static public float TXTBTN_WIDTH_S        = 105;      // ボタン幅サイズ(小)
     final static public float TXTBTN_HEIGHT         = 50;       // ボタンの高さ
     final static public float TTLIMG_HEIGHT         = 200;      // タイトルイメージの高さ(幅は自動決定)
-    final static public float TXT_SIZE_S            = 0.5f;     // テキストサイズ(小)
+    final static public float TXT_SIZE_S            = 0.3f;     // テキストサイズ(小)
     // 従属変数
     final static public float TTL_PAI_WIDTH         = TTL_PAI_HEIGHT * 0.7f;
     final static public float SCRN_WIDTH_CTR        = SCRN_WIDTH / 2;

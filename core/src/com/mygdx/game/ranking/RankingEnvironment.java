@@ -43,7 +43,7 @@ class RankingEnvironment {
         table.padLeft(200f).padRight(200f);
         table.padTop(50f).padBottom(50f);
         table.setFillParent(true);
-        table.debugAll();
+//        table.debugAll();
         Label rankingMode = getModeLabel(viewMode);
         table.add(rankingMode).colspan(4).fillX();
         table.row().padTop(20).padBottom(20);

@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.mygdx.game.help.HelpScreen;
 import com.mygdx.game.item.Config;
 import com.mygdx.game.license.LicenseScreen;
 import com.mygdx.game.main.Shisen;
@@ -93,6 +94,13 @@ class TitleEnvironment {
         // イメージボタン作成
         ImageButton imgBtn = new ImageButton(txrDrawable);
         imgBtn.setBounds(10, 0, width, height);
+        imgBtn.addListener(new InputListener() {
+            @Override
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(new HelpScreen(game));
+                return true;
+            }
+        });
         return imgBtn;
     }
 
@@ -125,4 +133,6 @@ class TitleEnvironment {
             }
         });
     }
+
+    //
 }
