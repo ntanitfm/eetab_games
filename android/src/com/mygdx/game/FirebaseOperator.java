@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mygdx.game.item.Config;
 import com.mygdx.game.item.ResultData;
 import com.mygdx.game.main.DatabaseOperator;
 
@@ -47,7 +48,14 @@ public class FirebaseOperator implements DatabaseOperator {
                 for (DataSnapshot res : dataSnapshot.getChildren()) {
                     resultList.add(res.getValue(ResultData.class));
                 }
-                Log.i(TAG, "size " + resultList.size());
+                // DB初期化
+                if(resultList.size() == 0) {
+                    Log.i(TAG, "Firebase init");
+                    for(int i=0; i<10; i++) {
+                        dbRef.push().setValue(new ResultData(Config.PLAY_LV1, 300000, " **** "));
+                        dbRef.push().setValue(new ResultData(Config.PLAY_LV2, 300000, " **** "));
+                    }
+                }
             }
 
             @Override

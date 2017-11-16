@@ -41,7 +41,7 @@ class TitleEnvironment {
     Image getTitleImg() {
         Image ttlImg = new Image(new Texture("image/shisen.PNG"));
         ttlImg.setSize(Config.TTLIMG_WIDTH, Config.TTLIMG_HEIGHT);
-        ttlImg.setPosition(SCRN_WIDTH_CTR - TTLIMG_WIDTH_CTR, SCRN_HEIGHT - TTLIMG_HEIGHT - 30);
+        ttlImg.setPosition(SCRN_WIDTH_CTR - TTLIMG_WIDTH_CTR, SCRN_HEIGHT - TTLIMG_HEIGHT - 60);
         return ttlImg;
     }
 
@@ -60,6 +60,7 @@ class TitleEnvironment {
         TextButton txtBtn = new TextButton(label, skin);
         txtBtn.setSize(TXTBTN_WIDTH_L, TXTBTN_HEIGHT);
         txtBtn.setPosition(SCRN_WIDTH_CTR - TXTBTN_WIDTH_L_CTR, SCRN_HEIGHT_CTR - y_from_center);
+        txtBtn.getLabel().setFontScale(TXT_SIZE_S);
         setBtnListener(txtBtn);
         return txtBtn;
     }
@@ -81,6 +82,20 @@ class TitleEnvironment {
         return imgBtn;
     }
 
+    // 遊び方表示ボタン
+    ImageButton getHelpButton() {
+        float height = 60f;
+        float width = height * 3.08f;
+        // テクスチャ準備
+        Texture texture = new Texture(Gdx.files.internal("image/help2.PNG"));
+        TextureRegion txRegion = new TextureRegion(texture);
+        TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
+        // イメージボタン作成
+        ImageButton imgBtn = new ImageButton(txrDrawable);
+        imgBtn.setBounds(10, 0, width, height);
+        return imgBtn;
+    }
+
     // スクリーン遷移用リスナー
     private void setBtnListener(final TextButton txtBtn) {
         txtBtn.addListener(new InputListener() {
@@ -94,7 +109,7 @@ class TitleEnvironment {
                 }
                 // ランキング画面へ遷移
                 else if(gamemode.equals(Config.RANK)) {
-                    game.setScreen(new RankingScreen(game));
+                    game.setScreen(new RankingScreen(game, Config.PLAY_LV1));
                 }
                 return true;
             }

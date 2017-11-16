@@ -53,7 +53,7 @@ class ResultEnvironment {
         float width = 1280f;
         float height = 100;
         Label label = new Label("難易度[" + mode + "]", Config.skin);
-        label.setFontScale(3);
+        label.setFontScale(1);
         label.setSize(width, height);
         label.setAlignment(Align.center);
 //        label.debug();
@@ -67,7 +67,7 @@ class ResultEnvironment {
         float width = 1280f;
         float height = 200f;
         Label label = new Label("達成時間\n" + generateSec(time), Config.skin);
-        label.setFontScale(5);
+        label.setFontScale(1.2f);
         label.setSize(width, height);
         label.setAlignment(Align.center);
 //        label.debug();
@@ -78,11 +78,12 @@ class ResultEnvironment {
 
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
-        float width = Config.TXTBTN_WIDTH_S;
+        float width = Config.TXTBTN_WIDTH_M;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(0f, 0f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
         setBtnListener(txtBtn);
         return txtBtn;
     }
@@ -94,6 +95,7 @@ class ResultEnvironment {
         TextButton txtBtn = new TextButton(Config.RANK, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, 0f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S * 0.8f);
         setBtnListener(txtBtn);
         return txtBtn;
     }
@@ -109,7 +111,7 @@ class ResultEnvironment {
                 game.setScreen(new TitleScreen(game));
             }
             if(mode.equals(Config.RANK)) {
-                game.setScreen(new RankingScreen(game));
+                game.setScreen(new RankingScreen(game, ResultEnvironment.this.mode));
             }
             return true;
             }

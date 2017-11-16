@@ -19,8 +19,14 @@ public class ResultData {
 
     public ResultData(String mode, long time, String name) {
         this.mode = mode;
-        this.name = name;
         this.time = time;
+        // 文字数は10文字以内
+        if(name.length() >= 10) {
+            this.name = name.substring(0,10);
+        }
+        else {
+            this.name = name;
+        }
         // 日付の取得
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

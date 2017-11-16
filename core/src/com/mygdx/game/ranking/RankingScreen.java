@@ -22,10 +22,10 @@ public class RankingScreen extends ScreenAdapter {
     Table rankTable;
     RankingEnvironment env;
 
-    public RankingScreen(Shisen game) {
+    public RankingScreen(Shisen game, String mode) {
         Gdx.app.log(TAG, "constractor in Ranking");
         this.game = game;
-        this.env = new RankingEnvironment(game);
+        this.env = new RankingEnvironment(game, mode);
         goTitle = env.getTitleButton();
         rankTable = env.getTable();
         chgLv1 = env.getLv1RankingButton();

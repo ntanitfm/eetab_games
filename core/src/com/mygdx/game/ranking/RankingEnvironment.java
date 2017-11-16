@@ -28,11 +28,11 @@ class RankingEnvironment {
     String viewMode;
     String crntVMode;
 
-    RankingEnvironment(Shisen game) {
+    RankingEnvironment(Shisen game, String mode) {
         Gdx.app.log(TAG, "constractor");
         this.game = game;
         SCREEN_MODE = Config.NO_SLCT;
-        crntVMode = viewMode = Config.PLAY_LV1;
+        crntVMode = viewMode = mode;
     }
 
     Table getTable() {
@@ -40,9 +40,10 @@ class RankingEnvironment {
         resultList = game.dbo.read();
         showList = getByKey(viewMode);
         Table table = new Table();
-        table.padLeft(100f);
-        table.padRight(100f);
+        table.padLeft(200f).padRight(200f);
+        table.padTop(50f).padBottom(50f);
         table.setFillParent(true);
+        table.debugAll();
         Label rankingMode = getModeLabel(viewMode);
         table.add(rankingMode).colspan(4).fillX();
         table.row().padTop(20).padBottom(20);
@@ -52,7 +53,7 @@ class RankingEnvironment {
         labels.add(new Label("名前", Config.skin));
         labels.add(new Label("タイム", Config.skin));
         labels.add(new Label("日付", Config.skin));
-        tableSetter(labels, table, 1.5f);
+        tableSetter(labels, table, 0.7f);
         int number = 1;
         for(ResultData rd : showList) {
             Gdx.app.log(TAG, rd.toString());
@@ -61,7 +62,7 @@ class RankingEnvironment {
             labels.add(new Label(rd.name, Config.skin));
             labels.add(new Label(rd.generateSec(), Config.skin));
             labels.add(new Label(rd.date, Config.skin));
-            tableSetter(labels, table, 2.2f);
+            tableSetter(labels, table, 0.5f);
             if(number > 10) break;
         }
         return table;
@@ -105,7 +106,7 @@ class RankingEnvironment {
         float width = 500f;
         float height = 100f;
         Label label = new Label(mode + "モードランキング", Config.skin);
-        label.setFontScale(2);
+        label.setFontScale(1f);
         label.setSize(width, height);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height);
         label.setColor(0,0,0,1);
@@ -116,33 +117,36 @@ class RankingEnvironment {
 
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
-        float width = Config.TXTBTN_WIDTH_S;
+        float width = Config.TXTBTN_WIDTH_M;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(0f, 0f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
         setBtnListener(txtBtn);
         return txtBtn;
     }
 
     // easyランキングモード
     TextButton getLv1RankingButton() {
-        float width = Config.TXTBTN_WIDTH_S;
+        float width = Config.TXTBTN_WIDTH_M;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.PLAY_LV1, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, height + 10f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
         setChgModeListener(txtBtn);
         return txtBtn;
     }
 
     // hardランキングモード
     TextButton getLv2RankingButton() {
-        float width = Config.TXTBTN_WIDTH_S;
+        float width = Config.TXTBTN_WIDTH_M;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.PLAY_LV2, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, 0f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
         setChgModeListener(txtBtn);
         return txtBtn;
     }

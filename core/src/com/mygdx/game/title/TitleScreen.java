@@ -26,6 +26,7 @@ public class TitleScreen extends ScreenAdapter {
     TextButton normalButton;
     TextButton rankingButton;
     ImageButton info;
+    ImageButton help;
 
     // 部品生成
     public TitleScreen(Shisen game) {
@@ -41,6 +42,8 @@ public class TitleScreen extends ScreenAdapter {
         rankingButton = env.getTitleTextButton(Config.RANK, 370);
         // ライセンス表示ボタン
         info = env.getInfoButton();
+        // 遊び方表示ボタン
+        help = env.getHelpButton();
     }
 
     // 部品登録
@@ -57,6 +60,7 @@ public class TitleScreen extends ScreenAdapter {
         stage.addActor(normalButton);
         stage.addActor(rankingButton);
         stage.addActor(info);
+        stage.addActor(help);
     }
 
     @Override

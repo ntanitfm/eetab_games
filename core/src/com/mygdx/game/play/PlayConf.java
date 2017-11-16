@@ -28,8 +28,8 @@ class PlayConf {
     private void setLv1Conf() {
         ROWS = 6;
         COLS = 9;
-        PAI_HEIGHT = Config.SCRN_HEIGHT / ROWS;
-        PAI_WIDTH = (Config.SCRN_WIDTH * 0.8f) / COLS;
+        PAI_HEIGHT = (Config.SCRN_HEIGHT * 0.95f) / ROWS;
+        PAI_WIDTH = (Config.SCRN_WIDTH * 0.77f) / COLS;
         paiTypeList = new ArrayList<String>(Arrays.asList(
             "0","1","2","9","10","11","18","19","20","27","28","29","30",
             "0","1","2","9","10","11","18","19","20","27","28","29","30",
