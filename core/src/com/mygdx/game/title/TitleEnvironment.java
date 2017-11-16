@@ -88,7 +88,7 @@ class TitleEnvironment {
         float height = 60f;
         float width = height * 3.08f;
         // テクスチャ準備
-        Texture texture = new Texture(Gdx.files.internal("image/help2.PNG"));
+        Texture texture = new Texture(Gdx.files.internal("image/help.PNG"));
         TextureRegion txRegion = new TextureRegion(texture);
         TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
         // イメージボタン作成
