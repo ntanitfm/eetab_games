@@ -52,7 +52,7 @@ class ResultEnvironment {
         float width = 1280f;
         float height = 100;
         Label label = new Label("難易度[" + mode + "]", Config.skin);
-        label.setFontScale(1);
+        label.setFontScale(Config.HEAD_TXT_SIZE);
         label.setSize(width, height);
         label.setAlignment(Align.center);
 //        label.debug();
@@ -66,7 +66,7 @@ class ResultEnvironment {
         float width = 1280f;
         float height = 200f;
         Label label = new Label("達成時間\n" + generateSec(time), Config.skin);
-        label.setFontScale(1.2f);
+        label.setFontScale(Config.RSLT_TIME_SIZE);
         label.setSize(width, height);
         label.setAlignment(Align.center);
 //        label.debug();

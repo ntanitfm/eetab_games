@@ -53,7 +53,7 @@ class RankingEnvironment {
         labels.add(new Label("名前", Config.skin));
         labels.add(new Label("タイム", Config.skin));
         labels.add(new Label("日付", Config.skin));
-        tableSetter(labels, table, 0.7f);
+        tableSetter(labels, table, Config.TXT_SIZE_M);
         int number = 1;
         for(ResultData rd : showList) {
             Gdx.app.log(TAG, rd.toString());
@@ -62,7 +62,7 @@ class RankingEnvironment {
             labels.add(new Label(rd.name, Config.skin));
             labels.add(new Label(rd.generateSec(), Config.skin));
             labels.add(new Label(rd.date, Config.skin));
-            tableSetter(labels, table, 0.5f);
+            tableSetter(labels, table, Config.TXT_SIZE_S);
             if(number > 10) break;
         }
         return table;
@@ -106,7 +106,7 @@ class RankingEnvironment {
         float width = 500f;
         float height = 100f;
         Label label = new Label(mode + "モードランキング", Config.skin);
-        label.setFontScale(1f);
+        label.setFontScale(Config.HEAD_TXT_SIZE);
         label.setSize(width, height);
         label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height);
         label.setColor(0,0,0,1);
