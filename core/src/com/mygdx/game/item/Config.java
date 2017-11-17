@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -54,12 +56,14 @@ public class Config {
     static public OrthographicCamera camera;
     static public Viewport viewport;
     static public Skin skin;
+    static public DistanceFieldShader distanceFieldShader;
 
     static public void load() {
         batcher = new SpriteBatch();
         camera = new OrthographicCamera();
         viewport = new FitViewport(SCRN_WIDTH, SCRN_HEIGHT, camera);
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
+        distanceFieldShader = new DistanceFieldShader();
     }
 
     // 描画用ルーチン
@@ -69,5 +73,20 @@ public class Config {
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
         batcher.setProjectionMatrix(camera.combined);
+    }
+
+    // シェーダ
+    private static class DistanceFieldShader extends ShaderProgram {
+        public DistanceFieldShader () {
+            super(Gdx.files.internal("shader/distancefield.vert"), Gdx.files.internal("shader/distancefield.frag"));
+            if (!isCompiled()) {
+                throw new RuntimeException("Shader compilation failed:\n" + getLog());
+            }
+        }
+        public void setSmoothing (float smoothing) {
+            float delta = 0.5f * MathUtils.clamp(smoothing, 0, 1);
+            setUniformf("u_lower", 0.5f - delta);
+            setUniformf("u_upper", 0.5f + delta);
+        }
     }
 }
