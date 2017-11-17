@@ -72,4 +72,10 @@ public class TitleScreen extends ScreenAdapter {
         stage.draw();
         Config.batcher.end();
     }
+
+    @Override
+    public void dispose() {
+        Gdx.app.log(TAG, "dispose");
+        super.dispose();
+    }
 }

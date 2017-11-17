@@ -1,6 +1,6 @@
 package com.mygdx.game.main;
 
-import com.mygdx.game.item.ResultData;
+import com.mygdx.game.result.ResultData;
 
 import java.util.List;
 

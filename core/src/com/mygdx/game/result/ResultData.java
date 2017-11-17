@@ -1,4 +1,4 @@
-package com.mygdx.game.item;
+package com.mygdx.game.result;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.main.Shisen;
 
 /**
  * プログラム中に広範に用いられる変数群。
@@ -15,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
  */
 
 public class Config {
+    private Shisen game;
     // 独立変数
     final static public float SCRN_WIDTH            = 1280;     // 仮想スクリーンの幅
     final static public float SCRN_HEIGHT           = 800;      // 仮想スクリーンの高さ
@@ -49,6 +51,11 @@ public class Config {
     final static public OrthographicCamera camera   = new OrthographicCamera();
     final static public Viewport viewport           = new FitViewport(Config.SCRN_WIDTH, Config.SCRN_HEIGHT, camera);
     final static public Skin skin                   = new Skin(Gdx.files.internal("skins/uiskin.json"));
+
+    // コンストラクタ
+    public Config(Shisen game) {
+        this.game = game;
+    }
 
     // 描画用ルーチン
     static public void drawRoutine() {

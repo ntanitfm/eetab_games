@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mygdx.game.item.Config;
-import com.mygdx.game.item.ResultData;
+import com.mygdx.game.result.ResultData;
 import com.mygdx.game.main.DatabaseOperator;
 
 import java.util.ArrayList;

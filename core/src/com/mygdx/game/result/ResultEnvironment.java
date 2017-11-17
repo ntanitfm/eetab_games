@@ -8,7 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.item.Config;
-import com.mygdx.game.item.ResultData;
 import com.mygdx.game.main.Shisen;
 import com.mygdx.game.ranking.RankingScreen;
 import com.mygdx.game.title.TitleScreen;
