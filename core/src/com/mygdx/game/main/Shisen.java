@@ -1,6 +1,7 @@
 package com.mygdx.game.main;
 
 import com.badlogic.gdx.Game;
+import com.mygdx.game.item.Config;
 import com.mygdx.game.title.TitleScreen;
 
 public class Shisen extends Game {
@@ -12,6 +13,7 @@ public class Shisen extends Game {
 
 	@Override
 	public void create () {
+		Config.load();
 		setScreen(new TitleScreen(this));
 	}
 }

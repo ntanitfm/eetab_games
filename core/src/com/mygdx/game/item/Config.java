@@ -47,14 +47,16 @@ public class Config {
     final static public String RSLT                 = "結果";
     final static public String RANK                 = "ランキング";
     // シーン
-    final static public SpriteBatch batcher         = new SpriteBatch();
-    final static public OrthographicCamera camera   = new OrthographicCamera();
-    final static public Viewport viewport           = new FitViewport(Config.SCRN_WIDTH, Config.SCRN_HEIGHT, camera);
-    final static public Skin skin                   = new Skin(Gdx.files.internal("skins/uiskin.json"));
+    static public SpriteBatch batcher;
+    static public OrthographicCamera camera;
+    static public Viewport viewport;
+    static public Skin skin;
 
-    // コンストラクタ
-    public Config(Shisen game) {
-        this.game = game;
+    static public void load() {
+        batcher = new SpriteBatch();
+        camera = new OrthographicCamera();
+        viewport = new FitViewport(SCRN_WIDTH, SCRN_HEIGHT, camera);
+        skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
     }
 
     // 描画用ルーチン
