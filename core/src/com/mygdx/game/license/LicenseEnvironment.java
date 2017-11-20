@@ -29,9 +29,9 @@ class LicenseEnvironment {
         Gdx.app.log(TAG, "getTable called");
         String somescript = LicenceScripts.libgdxLicense;   // ここは引数でscriptの内容を変更できるようにする
         Label script = new Label(somescript, Config.skin);
-        script.setFontScale(Config.TXT_SIZE_S);
+        script.setFontScale(Config.TXT_SIZE_S * 0.7f);
         Table container = new Table();
-        container.padLeft(150f).padRight(150f);
+        container.padLeft(170f).padRight(170f);
         container.setFillParent(true);
         ScrollPane scrollPane = new ScrollPane(script, Config.skin);
         container.add(scrollPane);
@@ -42,7 +42,7 @@ class LicenseEnvironment {
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
         Gdx.app.log(TAG, "getTitleButton called");
-        float width = Config.TXTBTN_WIDTH_S;
+        float width = Config.TXTBTN_WIDTH_M;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
         txtBtn.setSize(width, height);

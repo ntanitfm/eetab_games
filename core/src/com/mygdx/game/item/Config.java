@@ -3,7 +3,10 @@ package com.mygdx.game.item;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -64,12 +67,21 @@ public class Config {
         viewport = new FitViewport(SCRN_WIDTH, SCRN_HEIGHT, camera);
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
         distanceFieldShader = new DistanceFieldShader();
+
+//        Texture.TextureFilter minFilter = Texture.TextureFilter.MipMapLinearNearest;
+//        Texture.TextureFilter magFilter = Texture.TextureFilter.Linear;
+//        for(int i = 0; i < skin.get("default-font", BitmapFont.class).getRegions().size; i++) {
+//            skin.get("default-font", BitmapFont.class).getRegion(i).getTexture().setFilter(minFilter, magFilter);
+//        }
+//        Texture texture = new Texture(Gdx.files.internal("font.png"));
+//        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+//        BitmapFont font = new BitmapFont(Gdx.files.internal("font.fnt"), new TextureRegion(texture), false);
     }
 
     // 描画用ルーチン
     static public void drawRoutine() {
         GL20 gl = Gdx.gl;
-        gl.glClearColor(1, 1, 1, 1);
+        gl.glClearColor(0.5f, 1f, 0f, 1f);
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
         batcher.setProjectionMatrix(camera.combined);
