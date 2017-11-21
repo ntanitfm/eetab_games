@@ -77,7 +77,7 @@ class TitleEnvironment {
         TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
         // イメージボタン作成
         ImageButton imgBtn = new ImageButton(txrDrawable);
-        imgBtn.setBounds(10, Config.SCRN_HEIGHT - height - 10, width, height);
+        imgBtn.setBounds(5, Config.SCRN_HEIGHT - height - 5, width, height);
         // リスナー設定
         setInfoListener(imgBtn);
         return imgBtn;
@@ -85,7 +85,7 @@ class TitleEnvironment {
 
     // 遊び方表示ボタン
     ImageButton getHelpButton() {
-        float height = 15f;
+        float height = 30f;
         float width = height * 3.08f;
         // テクスチャ準備
         Texture texture = new Texture(Gdx.files.internal("image/help.PNG"));
@@ -93,7 +93,7 @@ class TitleEnvironment {
         TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
         // イメージボタン作成
         ImageButton imgBtn = new ImageButton(txrDrawable);
-        imgBtn.setBounds(10, 0, width, height);
+        imgBtn.setBounds(5, 0, width, height);
         imgBtn.addListener(new InputListener() {
             @Override
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
