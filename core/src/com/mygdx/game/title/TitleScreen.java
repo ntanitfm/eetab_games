@@ -2,7 +2,6 @@ package com.mygdx.game.title;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -69,8 +68,11 @@ public class TitleScreen extends ScreenAdapter {
         Config.drawRoutine();
         // ここに描画処理
         Config.batcher.begin();
+//        Config.batcher.setShader(Config.distanceFieldShader);
+//        Config.distanceFieldShader.setSmoothing(0.25f / (2 * 16));
         stage.act();
         stage.draw();
+        Config.batcher.flush();
         Config.batcher.end();
     }
 

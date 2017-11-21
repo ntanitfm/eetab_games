@@ -3,6 +3,7 @@ package com.mygdx.game.item;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -65,31 +66,23 @@ public class Config {
         batcher = new SpriteBatch();
         camera = new OrthographicCamera();
         viewport = new FitViewport(SCRN_WIDTH, SCRN_HEIGHT, camera);
-//        skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
+        skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
         distanceFieldShader = new DistanceFieldShader();
 
-//        Texture.TextureFilter minFilter = Texture.TextureFilter.MipMapLinearNearest;
-//        Texture.TextureFilter magFilter = Texture.TextureFilter.Linear;
-//        for(int i = 0; i < skin.get("default-font", BitmapFont.class).getRegions().size; i++) {
-//            skin.get("default-font", BitmapFont.class).getRegion(i).getTexture().setFilter(minFilter, magFilter);
-//        }
+        // フォント生成
+        BitmapFont font = new BitmapFont(Gdx.files.internal("fonts/default/font.fnt"));
 
-//        Texture texture = new Texture(Gdx.files.internal("fonts/default/font3.png"));
-//        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-//        BitmapFont font = new BitmapFont(Gdx.files.internal("fonts/default/font.fnt"), new TextureRegion(texture), true);
-//        skin.add("default-font", font, BitmapFont.class);
+        // フィルタ設定
+        Texture.TextureFilter minFilter = Texture.TextureFilter.MipMapLinearNearest;
+        Texture.TextureFilter magFilter = Texture.TextureFilter.Linear;
+        for (int i = 0; i < font.getRegions().size; i++) {
+            Gdx.app.log("@@@", "num : "+i);
+            font.getRegion(i).getTexture().setFilter(minFilter, magFilter);
+        }
 
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/GenEiLateGoT-M.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 12;
-        BitmapFont font12 = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//        skin.add("default-font", font12, BitmapFont.class);
-
-        skin = new Skin();
-        skin.add("myFont12",font12);
-        skin.addRegions(new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas")));
-        skin.load(Gdx.files.internal("skins/uiskin.json"));
+//        skin = new Skin();
+        skin.add("default-font", font, BitmapFont.class);
+//        skin.load(Gdx.files.internal("skins/uiskin.json"));
     }
 
     // 描画用ルーチン
@@ -102,7 +95,7 @@ public class Config {
     }
 
     // シェーダ
-    private static class DistanceFieldShader extends ShaderProgram {
+    public static class DistanceFieldShader extends ShaderProgram {
         public DistanceFieldShader () {
             super(Gdx.files.internal("shader/distancefield.vert"), Gdx.files.internal("shader/distancefield.frag"));
             if (!isCompiled()) {
