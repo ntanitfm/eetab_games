@@ -117,36 +117,36 @@ class RankingEnvironment {
 
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
-        float width = Config.TXTBTN_WIDTH_M;
+        float width = Config.TXTBTN_WIDTH_S;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(0f, 0f);
-        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_SS);
         setBtnListener(txtBtn);
         return txtBtn;
     }
 
     // easyランキングモード
     TextButton getLv1RankingButton() {
-        float width = Config.TXTBTN_WIDTH_M;
+        float width = Config.TXTBTN_WIDTH_S;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.PLAY_LV1, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, height + 10f);
-        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_SS);
         setChgModeListener(txtBtn);
         return txtBtn;
     }
 
     // hardランキングモード
     TextButton getLv2RankingButton() {
-        float width = Config.TXTBTN_WIDTH_M;
+        float width = Config.TXTBTN_WIDTH_S;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.PLAY_LV2, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, 0f);
-        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_SS);
         setChgModeListener(txtBtn);
         return txtBtn;
     }

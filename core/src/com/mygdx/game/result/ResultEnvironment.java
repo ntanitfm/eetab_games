@@ -77,12 +77,12 @@ class ResultEnvironment {
 
     // タイトルへ戻るボタン
     TextButton getTitleButton() {
-        float width = Config.TXTBTN_WIDTH_M;
+        float width = Config.TXTBTN_WIDTH_S;
         float height = Config.TXTBTN_HEIGHT;
         TextButton txtBtn = new TextButton(Config.TITL, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(0f, 0f);
-        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_SS);
         setBtnListener(txtBtn);
         return txtBtn;
     }
@@ -94,7 +94,7 @@ class ResultEnvironment {
         TextButton txtBtn = new TextButton(Config.RANK, Config.skin);
         txtBtn.setSize(width, height);
         txtBtn.setPosition(Config.SCRN_WIDTH - width, 0f);
-        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_S * 0.8f);
+        txtBtn.getLabel().setFontScale(Config.TXT_SIZE_SS);
         setBtnListener(txtBtn);
         return txtBtn;
     }
