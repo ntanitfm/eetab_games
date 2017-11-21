@@ -69,8 +69,8 @@ class TitleEnvironment {
     // licence表示ボタン
     ImageButton getInfoButton() {
         // サイズ
-        float width = 30f;
-        float height = 30f;
+        float width = 15f;
+        float height = width;
         // テクスチャ準備
         Texture texture = new Texture(Gdx.files.internal("icon/button/info.png"));
         TextureRegion txRegion = new TextureRegion(texture);
@@ -85,7 +85,7 @@ class TitleEnvironment {
 
     // 遊び方表示ボタン
     ImageButton getHelpButton() {
-        float height = 60f;
+        float height = 15f;
         float width = height * 3.08f;
         // テクスチャ準備
         Texture texture = new Texture(Gdx.files.internal("image/help.PNG"));

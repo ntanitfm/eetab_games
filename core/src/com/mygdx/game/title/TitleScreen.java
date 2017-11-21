@@ -2,7 +2,6 @@ package com.mygdx.game.title;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -23,8 +22,8 @@ public class TitleScreen extends ScreenAdapter {
     Stage stage;
     Image shisenImg;
     Image titlePai;
-    TextButton easyButton;
     TextButton normalButton;
+    TextButton hardButton;
     TextButton rankingButton;
     ImageButton info;
     ImageButton help;
@@ -38,9 +37,9 @@ public class TitleScreen extends ScreenAdapter {
         // 中央回転牌
         titlePai = env.getTitlePai();
         // テキストボタン
-        easyButton = env.getTitleTextButton(Config.PLAY_LV1, 230);
-        normalButton = env.getTitleTextButton(Config.PLAY_LV2, 300);
-        rankingButton = env.getTitleTextButton(Config.RANK, 370);
+        normalButton = env.getTitleTextButton(Config.PLAY_LV1, 110);
+        hardButton = env.getTitleTextButton(Config.PLAY_LV2, 145);
+        rankingButton = env.getTitleTextButton(Config.RANK, 180);
         // ライセンス表示ボタン
         info = env.getInfoButton();
         // 遊び方表示ボタン
@@ -57,8 +56,8 @@ public class TitleScreen extends ScreenAdapter {
         // ウィジェット追加
         stage.addActor(shisenImg);
         stage.addActor(titlePai);
-        stage.addActor(easyButton);
         stage.addActor(normalButton);
+        stage.addActor(hardButton);
         stage.addActor(rankingButton);
         stage.addActor(info);
         stage.addActor(help);

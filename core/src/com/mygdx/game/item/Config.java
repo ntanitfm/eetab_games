@@ -18,20 +18,20 @@ import com.mygdx.game.main.Shisen;
 public class Config {
     private Shisen game;
     // 独立変数
-    final static public float SCRN_WIDTH            = 1280;     // 仮想スクリーンの幅
-    final static public float SCRN_HEIGHT           = 800;      // 仮想スクリーンの高さ
-    final static public float TTL_PAI_HEIGHT        = 200;      // タイトル牌の高さ(幅は自動決定)
+    final static public float SCRN_WIDTH            = 640;     // 仮想スクリーンの幅
+    final static public float SCRN_HEIGHT           = 400;      // 仮想スクリーンの高さ
+    final static public float TTL_PAI_HEIGHT        = 100;      // タイトル牌の高さ(幅は自動決定)
     final static public float TTL_PAI_ROTATE_SPD    = 2;        // タイトル牌の回転速度
-    final static public float TXTBTN_WIDTH_L        = 300;      // ボタン幅サイズ(大)
-    final static public float TXTBTN_WIDTH_M        = 150;      // ボタン幅サイズ(中)
-    final static public float TXTBTN_WIDTH_S        = 108;      // ボタン幅サイズ(小)
-    final static public float TXTBTN_HEIGHT         = 50;       // ボタンの高さ
-    final static public float TTLIMG_HEIGHT         = 200;      // タイトルイメージの高さ(幅は自動決定)
-    final static public float TXT_SIZE_SS           = 0.4f;     // テキストサイズ(小)
-    final static public float TXT_SIZE_S            = 0.5f;     // テキストサイズ(小)
-    final static public float TXT_SIZE_M            = 0.8f;     // テキストサイズ(中)
-    final static public float HEAD_TXT_SIZE         = 1.2f;       // ヘッド部分タイトルサイズ
-    final static public float RSLT_TIME_SIZE        = 1.5f;       // 結果秒数表示サイズ
+    final static public float TXTBTN_WIDTH_L        = 150;      // ボタン幅サイズ(大)
+    final static public float TXTBTN_WIDTH_M        = 75;      // ボタン幅サイズ(中)
+    final static public float TXTBTN_WIDTH_S        = 54;      // ボタン幅サイズ(小)
+    final static public float TXTBTN_HEIGHT         = 25;       // ボタンの高さ
+    final static public float TTLIMG_HEIGHT         = 100;      // タイトルイメージの高さ(幅は自動決定)
+    final static public float TXT_SIZE_SS           = 0.2f;     // テキストサイズ(小)
+    final static public float TXT_SIZE_S            = 0.25f;     // テキストサイズ(小)
+    final static public float TXT_SIZE_M            = 0.4f;     // テキストサイズ(中)
+    final static public float HEAD_TXT_SIZE         = 0.6f;       // ヘッド部分タイトルサイズ
+    final static public float RSLT_TIME_SIZE        = 0.75f;       // 結果秒数表示サイズ
     // 従属変数
     final static public float TTL_PAI_WIDTH         = TTL_PAI_HEIGHT * 0.7f;
     final static public float SCRN_WIDTH_CTR        = SCRN_WIDTH / 2;
