@@ -85,10 +85,10 @@ class TitleEnvironment {
 
     // 遊び方表示ボタン
     ImageButton getHelpButton() {
-        float height = 60f;
-        float width = height * 3.08f;
+        float height = 100f;
+        float width = height * 2.44f;
         // テクスチャ準備
-        Texture texture = new Texture(Gdx.files.internal("image/help.PNG"));
+        Texture texture = new Texture(Gdx.files.internal("image/help.png"));
         TextureRegion txRegion = new TextureRegion(texture);
         TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
         // イメージボタン作成
@@ -133,6 +133,4 @@ class TitleEnvironment {
             }
         });
     }
-
-    //
 }

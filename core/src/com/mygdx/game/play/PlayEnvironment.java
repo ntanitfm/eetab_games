@@ -1,8 +1,10 @@
 package com.mygdx.game.play;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -35,6 +37,8 @@ class PlayEnvironment {
     String mode;                        // モード記録用
     long startTime;                     // 時間記録用
 
+    Action fade;
+
     // 環境設定
     PlayEnvironment(Shisen game, String mode) {
         Gdx.app.log(TAG, mode + "Mode");
@@ -44,6 +48,11 @@ class PlayEnvironment {
         plycnf = new PlayConf(mode);
         // 開始時刻記録
         startTime = System.currentTimeMillis();
+        // アクション
+        fade = Actions.parallel(
+                Actions.fadeOut(0.3f),
+                Actions.scaleTo(2,2,0.3f)
+        );
         // 条件判定用クラス
         jdg = new PlayJudgement(plycnf.ROWS, plycnf.COLS);
         // テーブル設置
@@ -87,23 +96,17 @@ class PlayEnvironment {
                     slctedPai = null;
                 }
                 // 異なる牌
-                else {
+                else if (slctedPai.sameType(pai) && jdg.delJudgemnt(pai, slctedPai, paiList)){
                     Gdx.app.log(TAG, "diff pai selected");
-                    // 同じタイプの牌が選択された場合、条件判定
-                    if (slctedPai.sameType(pai) && jdg.delJudgemnt(pai, slctedPai, paiList)) {
-                        // 牌の無力化
-                        deletePai(paiList, pai, slctedPai);
-                        // 全牌が除去されたかの判定
-                        if(jdg.isAllPaiDeleted(paiList)) {
-                            game.setScreen(new ResultScreen(game, mode, System.currentTimeMillis() - startTime));
-                        }
+                    // 牌の無力化
+                    deletePai(paiList, pai, slctedPai);
+                    // 全牌が除去されたかの判定
+                    if(jdg.isAllPaiDeleted(paiList)) {
+                        game.setScreen(new ResultScreen(game, mode, System.currentTimeMillis() - startTime));
                     }
-                    // チェックされているときのみtoggleを行う
-                    if(slctedPai.imgButton.isChecked()) {
-                        Gdx.app.log(TAG, "toggled");
-                        slctedPai.imgButton.toggle();
-                    }
-                    // 直前の選択牌を無効化
+                    slctedPai = null;
+                }
+                else {
                     slctedPai = pai;
                 }
                 Gdx.app.log(TAG, "slctedPai = " + slctedPai);

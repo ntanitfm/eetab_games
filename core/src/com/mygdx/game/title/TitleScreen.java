@@ -2,7 +2,8 @@ package com.mygdx.game.title;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -29,6 +30,8 @@ public class TitleScreen extends ScreenAdapter {
     ImageButton info;
     ImageButton help;
 
+    TextureRegion background;
+
     // 部品生成
     public TitleScreen(Shisen game) {
         Gdx.app.log(TAG, "Constructor in Title");
@@ -38,13 +41,16 @@ public class TitleScreen extends ScreenAdapter {
         // 中央回転牌
         titlePai = env.getTitlePai();
         // テキストボタン
-        easyButton = env.getTitleTextButton(Config.PLAY_LV1, 230);
-        normalButton = env.getTitleTextButton(Config.PLAY_LV2, 300);
-        rankingButton = env.getTitleTextButton(Config.RANK, 370);
+        easyButton = env.getTitleTextButton(Config.PLAY_LV1, 210);
+        normalButton = env.getTitleTextButton(Config.PLAY_LV2, 280);
+        rankingButton = env.getTitleTextButton(Config.RANK, 350);
         // ライセンス表示ボタン
         info = env.getInfoButton();
         // 遊び方表示ボタン
         help = env.getHelpButton();
+
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/back.png")), 0, 0, 1280, 800);
+
     }
 
     // 部品登録
@@ -68,6 +74,11 @@ public class TitleScreen extends ScreenAdapter {
     public void render(float delta) {
         Config.drawRoutine();
         // ここに描画処理
+        Config.batcher.disableBlending();
+        Config.batcher.begin();
+        Config.batcher.draw(background, 0, 0, 1280, 800);
+        Config.batcher.end();
+        Config.batcher.enableBlending();
         Config.batcher.begin();
         stage.act();
         stage.draw();
