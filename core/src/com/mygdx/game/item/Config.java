@@ -66,7 +66,7 @@ public class Config {
     // 描画用ルーチン
     static public void drawRoutine() {
         GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0f, 0);
+        gl.glClearColor(0, 0, 0, 0);
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
         batcher.setProjectionMatrix(camera.combined);

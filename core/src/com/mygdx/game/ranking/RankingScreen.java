@@ -2,6 +2,8 @@ package com.mygdx.game.ranking;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -22,6 +24,8 @@ public class RankingScreen extends ScreenAdapter {
     Table rankTable;
     RankingEnvironment env;
 
+    TextureRegion background;
+
     public RankingScreen(Shisen game, String mode) {
         Gdx.app.log(TAG, "constractor in Ranking");
         this.game = game;
@@ -30,6 +34,7 @@ public class RankingScreen extends ScreenAdapter {
         rankTable = env.getTable();
         chgLv1 = env.getLv1RankingButton();
         chgLv2 = env.getLv2RankingButton();
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/back2.png")));
     }
 
     @Override
@@ -62,6 +67,11 @@ public class RankingScreen extends ScreenAdapter {
     void draw() {
 //        Gdx.app.log(TAG, "draw");
         Config.drawRoutine();
+        Config.batcher.disableBlending();
+        Config.batcher.begin();
+        Config.batcher.draw(background, 0, 0, 1280, 800);
+        Config.batcher.end();
+        Config.batcher.enableBlending();
         // 描画処理
         Config.batcher.begin();
         this.stage.act();

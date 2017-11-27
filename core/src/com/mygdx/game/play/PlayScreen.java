@@ -2,6 +2,8 @@ package com.mygdx.game.play;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -22,6 +24,8 @@ public class PlayScreen extends ScreenAdapter {
     TextButton resultButton;
     PlayEnvironment env;
 
+    TextureRegion background;
+
     public PlayScreen(Shisen game, String mode) {
         Gdx.app.log(TAG, "Constructor in Play");
         // 環境設定読み込み(モード選択)
@@ -31,6 +35,8 @@ public class PlayScreen extends ScreenAdapter {
         resultButton = env.getResultButton();
         // 牌テーブル読み込み
         playTable = env.table;
+
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/back2.png")));
     }
 
     @Override
@@ -48,6 +54,11 @@ public class PlayScreen extends ScreenAdapter {
     public void render(float delta) {
         Config.drawRoutine();
         // 描画処理
+        Config.batcher.disableBlending();
+        Config.batcher.begin();
+        Config.batcher.draw(background, 0, 0, 1280, 800);
+        Config.batcher.end();
+        Config.batcher.enableBlending();
         Config.batcher.begin();
         this.stage.act();
         this.stage.draw();

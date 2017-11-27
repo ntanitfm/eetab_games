@@ -121,6 +121,8 @@ class PlayEnvironment {
         // ボタン登録フラグ抹消
         paiList.get(jdg.convPos_Id(nowPai.position)).invisible = true;
         paiList.get(jdg.convPos_Id(slctedPai.position)).invisible = true;
+//        nowPai.imgButton.addAction(fade);
+//        slctedPai.imgButton.addAction(fade);
         // ボタン不可視化
         nowPai.imgButton.setVisible(false);
         slctedPai.imgButton.setVisible(false);

@@ -27,7 +27,7 @@ public class HelpScreen extends ScreenAdapter {
         Gdx.app.log(TAG, "Constructor");
         this.game = game;
         // ヘルプ画面ｓ
-        tutorial = new Image(new Texture("image/tutorial.PNG"));
+        tutorial = new Image(new Texture("image/tutorial.png"));
         tutorial.setFillParent(true);
         tutorial.setPosition(0,0);
         // タイトルへ戻るボタン

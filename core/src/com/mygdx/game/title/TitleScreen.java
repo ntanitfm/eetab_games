@@ -41,15 +41,15 @@ public class TitleScreen extends ScreenAdapter {
         // 中央回転牌
         titlePai = env.getTitlePai();
         // テキストボタン
-        easyButton = env.getTitleTextButton(Config.PLAY_LV1, 210);
-        normalButton = env.getTitleTextButton(Config.PLAY_LV2, 280);
-        rankingButton = env.getTitleTextButton(Config.RANK, 350);
+        easyButton = env.getTitleTextButton(Config.PLAY_LV1, 200);
+        normalButton = env.getTitleTextButton(Config.PLAY_LV2, 270);
+        rankingButton = env.getTitleTextButton(Config.RANK, 340);
         // ライセンス表示ボタン
         info = env.getInfoButton();
         // 遊び方表示ボタン
         help = env.getHelpButton();
 
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/back.png")), 0, 0, 1280, 800);
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/back.png")));
 
     }
 
