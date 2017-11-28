@@ -34,7 +34,7 @@ public class RankingScreen extends ScreenAdapter {
         rankTable = env.getTable();
         chgLv1 = env.getLv1RankingButton();
         chgLv2 = env.getLv2RankingButton();
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/back2.png")));
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/rankingback.png")));
     }
 
     @Override

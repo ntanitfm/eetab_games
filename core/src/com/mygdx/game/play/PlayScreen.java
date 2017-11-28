@@ -36,7 +36,7 @@ public class PlayScreen extends ScreenAdapter {
         // 牌テーブル読み込み
         playTable = env.table;
 
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/back2.png")));
+        background = new TextureRegion(new Texture(Gdx.files.internal("image/playback.png")));
     }
 
     @Override
