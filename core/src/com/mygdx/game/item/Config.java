@@ -26,7 +26,7 @@ public class Config {
     final static public float TXTBTN_WIDTH_M        = 150;      // ボタン幅サイズ(中)
     final static public float TXTBTN_WIDTH_S        = 108;      // ボタン幅サイズ(小)
     final static public float TXTBTN_HEIGHT         = 50;       // ボタンの高さ
-    final static public float TTLIMG_HEIGHT         = 200;      // タイトルイメージの高さ(幅は自動決定)
+    final static public float TTLIMG_HEIGHT         = 180;      // タイトルイメージの高さ(幅は自動決定)
     final static public float TXT_SIZE_SS           = 0.4f;     // テキストサイズ(小)
     final static public float TXT_SIZE_S            = 0.5f;     // テキストサイズ(小)
     final static public float TXT_SIZE_M            = 0.8f;     // テキストサイズ(中)
@@ -40,7 +40,7 @@ public class Config {
     final static public float TTL_PAI_HEIGHT_CTR    = TTL_PAI_HEIGHT / 2;
     final static public float TXTBTN_WIDTH_L_CTR    = TXTBTN_WIDTH_L / 2;
     final static public float TTL_TXTBTN_HEIGHT_CTR = TXTBTN_HEIGHT / 2;
-    final static public float TTLIMG_WIDTH          = TTLIMG_HEIGHT * 2.9f;
+    final static public float TTLIMG_WIDTH          = TTLIMG_HEIGHT * 3.07f;
     final static public float TTLIMG_HEIGHT_CTR     = TTLIMG_HEIGHT / 2;
     final static public float TTLIMG_WIDTH_CTR      = TTLIMG_WIDTH / 2;
     // 状態名
