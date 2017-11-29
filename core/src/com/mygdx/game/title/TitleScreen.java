@@ -30,7 +30,7 @@ public class TitleScreen extends ScreenAdapter {
     ImageButton info;
     ImageButton help;
 
-    TextureRegion background;
+    Texture background;
 
     // 部品生成
     public TitleScreen(Shisen game) {
@@ -49,7 +49,7 @@ public class TitleScreen extends ScreenAdapter {
         // 遊び方表示ボタン
         help = env.getHelpButton();
 
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/back.png")));
+        background = Config.getBackground("image/back.png");
 
     }
 

@@ -57,7 +57,7 @@ class ResultEnvironment {
         label.setAlignment(Align.center);
 //        label.debug();
         label.setColor(0,0,0,1);
-        label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 20);
+        label.setPosition(Config.SCRN_WIDTH_CTR - width / 2, Config.SCRN_HEIGHT - height - 50);
         return label;
     }
 

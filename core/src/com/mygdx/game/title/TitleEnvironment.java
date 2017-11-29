@@ -40,7 +40,7 @@ class TitleEnvironment {
 
     // タイトルイメージ読み込み
     Image getTitleImg() {
-        Image ttlImg = new Image(new Texture("image/shisen.PNG"));
+        Image ttlImg = new Image(Config.getBackground("image/shisen.PNG"));
         ttlImg.setSize(Config.TTLIMG_WIDTH, Config.TTLIMG_HEIGHT);
         ttlImg.setPosition(SCRN_WIDTH_CTR - TTLIMG_WIDTH_CTR, SCRN_HEIGHT - TTLIMG_HEIGHT - 75);
         return ttlImg;
@@ -48,7 +48,7 @@ class TitleEnvironment {
 
     // タイトル回転牌
     Image getTitlePai() {
-        Image ttlPai = new Image(new Texture("icon/normal/p1.png"));
+        Image ttlPai = new Image(Config.getBackground("icon/normal/p1.png"));
         ttlPai.setSize(TTL_PAI_WIDTH, TTL_PAI_HEIGHT);
         ttlPai.setPosition(SCRN_WIDTH_CTR - TTL_PAI_WIDTH_CTR, SCRN_HEIGHT_CTR - TTL_PAI_HEIGHT_CTR);
         ttlPai.setOrigin(TTL_PAI_WIDTH_CTR, TTL_PAI_HEIGHT_CTR);
@@ -89,6 +89,7 @@ class TitleEnvironment {
         float width = height * 2.44f;
         // テクスチャ準備
         Texture texture = new Texture(Gdx.files.internal("image/help.png"));
+//        Texture texture = Config.getBackground("image/help.png");
         TextureRegion txRegion = new TextureRegion(texture);
         TextureRegionDrawable txrDrawable = new TextureRegionDrawable(txRegion);
         // イメージボタン作成

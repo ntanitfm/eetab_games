@@ -34,7 +34,7 @@ public class RankingScreen extends ScreenAdapter {
         rankTable = env.getTable();
         chgLv1 = env.getLv1RankingButton();
         chgLv2 = env.getLv2RankingButton();
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/rankingback.png")));
+        background = new TextureRegion(Config.getBackground("image/rankingback.png"));
     }
 
     @Override
@@ -55,7 +55,6 @@ public class RankingScreen extends ScreenAdapter {
         draw();
     }
 
-    // @TODO このupdateを無くしたい.
     void update() {
         // 画面に変更があれば、画面を更新
         if(env.isRankingChangeed()) {

@@ -26,8 +26,10 @@ public class HelpScreen extends ScreenAdapter {
     public HelpScreen(final Shisen game) {
         Gdx.app.log(TAG, "Constructor");
         this.game = game;
-        // ヘルプ画面ｓ
-        tutorial = new Image(new Texture("image/tutorial.png"));
+        // ヘルプ画面
+        Texture texture = new Texture("image/tutorial.png");
+        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        tutorial = new Image(texture);
         tutorial.setFillParent(true);
         tutorial.setPosition(0,0);
         // タイトルへ戻るボタン

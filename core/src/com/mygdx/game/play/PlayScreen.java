@@ -24,7 +24,7 @@ public class PlayScreen extends ScreenAdapter {
     TextButton resultButton;
     PlayEnvironment env;
 
-    TextureRegion background;
+    Texture background;
 
     public PlayScreen(Shisen game, String mode) {
         Gdx.app.log(TAG, "Constructor in Play");
@@ -36,7 +36,7 @@ public class PlayScreen extends ScreenAdapter {
         // 牌テーブル読み込み
         playTable = env.table;
 
-        background = new TextureRegion(new Texture(Gdx.files.internal("image/playback.png")));
+        background = Config.getBackground("image/playback.png");
     }
 
     @Override
