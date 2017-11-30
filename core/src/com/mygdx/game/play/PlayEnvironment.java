@@ -36,7 +36,6 @@ class PlayEnvironment {
     ButtonGroup<ImageButton> paiGroup;  // 牌の制御用
     String mode;                        // モード記録用
     long startTime;                     // 時間記録用
-
     Action fade;
 
     // 環境設定
@@ -49,9 +48,12 @@ class PlayEnvironment {
         // 開始時刻記録
         startTime = System.currentTimeMillis();
         // アクション
-        fade = Actions.parallel(
-                Actions.fadeOut(0.3f),
-                Actions.scaleTo(2,2,0.3f)
+        fade = Actions.sequence(
+                Actions.parallel(
+                        Actions.fadeOut(0.3f),
+                        Actions.scaleTo(2,2,0.3f)
+                ),
+                Actions.removeActor()
         );
         // 条件判定用クラス
         jdg = new PlayJudgement(plycnf.ROWS, plycnf.COLS);

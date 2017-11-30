@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -44,8 +43,7 @@ public class PlayScreen extends ScreenAdapter {
         // 時間
         font = new BitmapFont();
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-//        font.setColor(0,0,0,1);
-        font.getData().setScale(3);
+        font.getData().setScale(3f);
         start = System.currentTimeMillis();
     }
 
@@ -63,6 +61,7 @@ public class PlayScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         time = 100f - (System.currentTimeMillis() - start) / 1000f;
+        String strTime = String.format("time %1$.3f",time);
         if(time < 0) {
             env.game.setScreen(new TitleScreen(env.game));
         }
@@ -71,7 +70,11 @@ public class PlayScreen extends ScreenAdapter {
         Config.batcher.disableBlending();
         Config.batcher.begin();
         Config.batcher.draw(background, 0, 0, 1280, 800);
-        font.draw(Config.batcher, String.format("time %1$.3f",time), 100f,Config.SCRN_HEIGHT - 10f);
+        font.draw(Config.batcher, strTime, 120f,Config.SCRN_HEIGHT - 10f);
+//        Label label = new Label(strTime, Config.skin);
+//        label.setPosition(100f,Config.SCRN_HEIGHT - 10f);
+//        label.setColor(0,0,0,1);
+//        label.draw(Config.batcher, 1);
         Config.batcher.end();
         Config.batcher.enableBlending();
         Config.batcher.begin();

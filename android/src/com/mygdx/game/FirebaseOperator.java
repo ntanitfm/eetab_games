@@ -52,8 +52,8 @@ public class FirebaseOperator implements DatabaseOperator {
                 if(resultList.size() == 0) {
                     Log.i(TAG, "Firebase init");
                     for(int i=0; i<10; i++) {
-                        dbRef.push().setValue(new ResultData(Config.PLAY_LV1, 300000, " **** "));
-                        dbRef.push().setValue(new ResultData(Config.PLAY_LV2, 300000, " **** "));
+                        dbRef.push().setValue(new ResultData(Config.PLAY_LV1, 120000, " **** "));
+                        dbRef.push().setValue(new ResultData(Config.PLAY_LV2, 120000, " **** "));
                     }
                 }
             }
