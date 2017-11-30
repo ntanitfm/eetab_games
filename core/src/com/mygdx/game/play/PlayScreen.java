@@ -91,5 +91,10 @@ public class PlayScreen extends ScreenAdapter {
     public void dispose() {
         Gdx.app.log(TAG, "dispose");
     }
+
+    @Override
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height,true);
+    }
 }
 

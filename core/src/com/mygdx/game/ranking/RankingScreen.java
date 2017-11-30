@@ -77,4 +77,9 @@ public class RankingScreen extends ScreenAdapter {
         this.stage.draw();
         Config.batcher.end();
     }
+
+    @Override
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height,true);
+    }
 }

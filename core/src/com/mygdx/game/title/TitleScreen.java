@@ -90,4 +90,9 @@ public class TitleScreen extends ScreenAdapter {
         Gdx.app.log(TAG, "dispose");
         super.dispose();
     }
+
+    @Override
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height,true);
+    }
 }
