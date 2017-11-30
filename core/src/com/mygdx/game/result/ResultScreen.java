@@ -32,7 +32,7 @@ public class ResultScreen extends ScreenAdapter {
         resultTitle = env.getModeLabel();
         goTitle = env.getTitleButton();
         goRanking = env.getRankingButton();
-        background = new TextureRegion(Config.getBackground("image/resultback2.png"));
+        background = new TextureRegion(Config.getBackground("image/resultback3.png"));
     }
 
     @Override
