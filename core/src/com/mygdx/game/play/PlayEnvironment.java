@@ -48,13 +48,13 @@ class PlayEnvironment {
         // 開始時刻記録
         startTime = System.currentTimeMillis();
         // アクション
-        fade = Actions.sequence(
-                Actions.parallel(
-                        Actions.fadeOut(0.3f),
-                        Actions.scaleTo(2,2,0.3f)
-                ),
-                Actions.removeActor()
-        );
+//        fade = Actions.sequence(
+//                Actions.parallel(
+//                        Actions.fadeOut(0.3f),
+//                        Actions.scaleTo(2,2,0.3f)
+//                ),
+//                Actions.removeActor()
+//        );
         // 条件判定用クラス
         jdg = new PlayJudgement(plycnf.ROWS, plycnf.COLS);
         // テーブル設置
@@ -82,7 +82,7 @@ class PlayEnvironment {
 
     // 牌選択時の動作
     private void setPaiListener(final Pai pai) {
-        Gdx.app.log(TAG, "setPaiListener");
+//        Gdx.app.log(TAG, "setPaiListener");
         pai.imgButton.addListener(new InputListener() {
             @Override
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {

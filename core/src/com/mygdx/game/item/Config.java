@@ -65,6 +65,11 @@ public class Config {
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
     }
 
+    static public void dispose() {
+        batcher.dispose();
+        skin.dispose();
+    }
+
     // 描画用ルーチン
     static public void drawRoutine() {
         GL20 gl = Gdx.gl;

@@ -28,23 +28,25 @@ class ResultEnvironment {
         this.game = game;
         this.mode = gameMode;
         this.time = elapsedTime;
+        rd = new ResultData(mode, time, "fixedValue");
+        game.dbo.push(rd);
         // 名前の入力
-        Gdx.input.getTextInput(new Input.TextInputListener() {
-            @Override
-            public void input(String text) {
-                Gdx.app.log(TAG, "input");
-                // 結果データ登録
-                rd = new ResultData(mode, time, text);
-                game.dbo.push(rd);
-                Gdx.app.log(TAG, "登録データ: " + rd);
-            }
-
-            @Override
-            public void canceled() {
-                // データ登録なし
-                Gdx.app.log(TAG, "canceled_データ登録なし");
-            }
-        }, "名前の入力。", "", "省略可能");
+//        Gdx.input.getTextInput(new Input.TextInputListener() {
+//            @Override
+//            public void input(String text) {
+//                Gdx.app.log(TAG, "input");
+//                // 結果データ登録
+//                rd = new ResultData(mode, time, text);
+//                game.dbo.push(rd);
+//                Gdx.app.log(TAG, "登録データ: " + rd);
+//            }
+//
+//            @Override
+//            public void canceled() {
+//                // データ登録なし
+//                Gdx.app.log(TAG, "canceled_データ登録なし");
+//            }
+//        }, "名前の入力。", "", "省略可能");
     }
 
     // 難易度を表示

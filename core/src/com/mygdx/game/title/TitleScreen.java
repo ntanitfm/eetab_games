@@ -29,7 +29,6 @@ public class TitleScreen extends ScreenAdapter {
     TextButton rankingButton;
     ImageButton info;
     ImageButton help;
-
     Texture background;
 
     // 部品生成

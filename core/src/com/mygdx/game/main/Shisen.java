@@ -16,4 +16,14 @@ public class Shisen extends Game {
 		Config.load();
 		setScreen(new TitleScreen(this));
 	}
+
+	@Override
+	public void render() {
+		super.render();
+	}
+
+	@Override
+	public void dispose () {
+		Config.dispose();
+	}
 }

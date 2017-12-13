@@ -20,7 +20,7 @@ import com.mygdx.game.title.TitleScreen;
 public class PlayScreen extends ScreenAdapter {
     String TAG = PlayScreen.class.getSimpleName();
     long start;
-    float time;
+    float time, lim;
     Stage stage;
     Table playTable;
     TextButton titleButton;
@@ -45,6 +45,8 @@ public class PlayScreen extends ScreenAdapter {
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.getData().setScale(3f);
         start = System.currentTimeMillis();
+        if(mode.equals(Config.PLAY_LV1)) lim = 300f;
+        else if(mode.equals(Config.PLAY_LV2)) lim = 600f;
     }
 
     @Override
@@ -60,7 +62,7 @@ public class PlayScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        time = 100f - (System.currentTimeMillis() - start) / 1000f;
+        time = lim - (System.currentTimeMillis() - start) / 1000f;
         String strTime = String.format("time %1$.3f",time);
         if(time < 0) {
             env.game.setScreen(new TitleScreen(env.game));
